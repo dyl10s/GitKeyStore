@@ -2,7 +2,7 @@
 GitKeyStore is a simple key value database using a GitHub repo for storage.
 
 ## Saving data
-To save data make a post request to [https://dylancontainers.tk/?Key={YOUR KEY}?Value={YOUR VALUE}](<https://dylancontainers.tk/?Key={YOUR KEY}?Value={YOUR VALUE}>) writing to the GitHub repo required a 
+To save data make a post request to [https://dylancontainers.tk/?Key={YOUR KEY}?Value={YOUR VALUE}](<https://dylancontainers.tk/?key={YOUR%20KEY}?value={YOUR%20VALUE}>) writing to the GitHub repo required a 
 pull request and a push so it can take a second or two.
 
 ## Retrieving Data
