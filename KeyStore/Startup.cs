@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,7 +32,15 @@ namespace KeyStore
             {
                 services.AddLettuceEncrypt();
             }
-            
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "AllowAll", builder =>
+                {
+                    builder.AllowAnyOrigin();
+                });
+            });
+
             services.AddScoped<GithubOptions>(x => new GithubOptions(Configuration));
             services.AddControllers();
         }
@@ -43,6 +52,8 @@ namespace KeyStore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowAll");
 
             app.UseHttpsRedirection();
 
