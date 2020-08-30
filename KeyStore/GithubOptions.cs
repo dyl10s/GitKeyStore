@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace KeyStore
 {
@@ -60,7 +61,7 @@ namespace KeyStore
             }
             else
             {
-                File.WriteAllText(RepoName + "/" + Key, Value);
+                File.WriteAllText(RepoName + "/" + HttpUtility.UrlEncode(Key), Value);
                 PushCode();
                 return true;
             }
@@ -70,7 +71,7 @@ namespace KeyStore
         {
             using (WebClient c = new WebClient())
             {
-                return c.DownloadString(RawUrl + "/" + Key);
+                return c.DownloadString(RawUrl + "/" + HttpUtility.UrlEncode(Key));
             }
         }
 
