@@ -29,4 +29,6 @@ jobs:
         repository: angrycarrot/angrycarrot/key-store
         tags: latest
         tag_with_sha: true
-        path: KeyValue
+        path: /home/runner/work/GitKeyStore/GitKeyStore
+        dockerfile: KeyStore/Dockerfile
+        
