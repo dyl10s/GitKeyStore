@@ -32,7 +32,7 @@ namespace KeyStore
 
         private void ConfigureGit()
         {
-            var results = $"git config --global user.email \"dylanstrohschein@gmail.com\" && git config --global user.name \"Dylan Strohschein\"".Bash();
+            var results = $"git config --global user.email \"alexaconnectskill@gmail.com\" && git config --global user.name \"GithubDatabase\"".Bash();
         }
 
         private void PullCode()
