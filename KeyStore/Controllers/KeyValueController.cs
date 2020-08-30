@@ -35,5 +35,11 @@ namespace KeyStore.Controllers
                 return NotFound();
             }
         }
+
+        [HttpGet("/View/Repo")]
+        public IActionResult GetRepo()
+        {
+            return Redirect(_githubOptions.Url);
+        }
     }
 }
